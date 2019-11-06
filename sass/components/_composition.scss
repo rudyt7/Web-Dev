@@ -1,0 +1,37 @@
+.composition {
+  position: relative;
+  width: 85%;
+
+  @include respond(tab-port) {
+    top: -5rem;
+  }
+
+  &__image {
+    width: 85%;
+    position: absolute;
+    box-shadow: 0 2rem 2.5rem rgba(black, 0.55);
+    transition: all 0.3s;
+
+    &--1 {
+      top: 2.8rem;
+      z-index: 9;
+      left: 6%;
+    }
+
+    &--2 {
+      top: 11rem;
+      left: 30%;
+      z-index: 8;
+    }
+
+    &:hover {
+      transform: scale(1.05) translateX(-1rem);
+      box-shadow: 0 0.75rem 0.95rem rgba(black, 0.25);
+      z-index: 10;
+    }
+  }
+
+  &:hover &__image:not(:hover) {
+    transform: scale(0.95);
+  }
+}
